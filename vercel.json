@@ -1,0 +1,11 @@
+{
+  "name": "Heart Disease Prediction",
+  "version": 1,
+  "builds": [
+    {
+      "src": "*py",
+      "use": "@liudonghua123/now-flask"
+    }
+  ],
+  "routes": [{ "src": "(.*)", "dest": "app.py" }]
+}
