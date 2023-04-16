@@ -9,6 +9,10 @@ CORS(app)
 with open('heart_disease_model.pkl', 'rb') as file:
     model = pickle.load(file)
 
+@app.route('/',methods=['GET'])
+def hello():
+    return("hello.")
+
 @app.route('/predict', methods=['POST'])
 def predict():
     data = request.get_json(silent=True, force=True)
