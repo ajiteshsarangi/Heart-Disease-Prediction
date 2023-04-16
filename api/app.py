@@ -1,6 +1,4 @@
 from flask import Flask, request, jsonify
-import numpy as np
-import pandas as pd
 import pickle
 from flask_cors import CORS
 
@@ -29,7 +27,7 @@ def predict():
     ca = float(data['NumVessels'])
     thal = float(data['Thallium'])
     
-    input = np.array([[age, sex, cp, trestbps, chol, fbs, restecg, thalach, exang, oldpeak, slope, ca, thal]])
+    input = [[age, sex, cp, trestbps, chol, fbs, restecg, thalach, exang, oldpeak, slope, ca, thal]]
     predict = model.predict(input)
 
     if predict[0] == 0: output = 'Not Present'
